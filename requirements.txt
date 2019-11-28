@@ -1,5 +1,7 @@
 Flask==1.0.2
 numpy==1.16.2
+oauthlib==2.0.1
 pandas==0.24.1
-altair==3.1.0
-Werkzeug
+requests==2.20.0
+requests-oauthlib==0.7.0
+six==1.10.0
