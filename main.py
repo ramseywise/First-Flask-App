@@ -13,7 +13,7 @@ def home():
 @app.route("/grainnoush")
 def grainnoush():
     """Return hello Grainnoush."""
-    return "Hello, Grainnoush!"
+    return render_template("grainnoush.html")
 
 
 if __name__ == "__main__":
