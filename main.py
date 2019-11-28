@@ -12,6 +12,7 @@ def home():
 
 @app.route("/grainnoush")
 def grainnoush():
+    """Return hello Grainnoush."""
     return "Hello, Grainnoush!"
 
 
