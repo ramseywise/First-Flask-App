@@ -95,6 +95,12 @@ def haha():
 
     return render_template("haha.html")
 
+@app.route("/example")
+def example():
+    """Return example webpage."""
+
+    return render_template("example.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
