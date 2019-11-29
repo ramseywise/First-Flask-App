@@ -65,26 +65,31 @@ def kitty():
         "Tots adorbs",
         "Yaaaaaasss queen",
     ]
+
+    keywords = [
+        "Cat AND Yaaaaaasss queen",
+        "Cat AND Tots adorbs",
+    ]
     insert = random.choice(rammoush_list)
 
-    # old_stdout = sys.stdout
-    # sys.stdout = TextIOWrapper(BytesIO(), sys.stdout.encoding)
-    url = "http://www.randomkittengenerator.com/cats/rotator.php"
-    # #url = "https://www.google.com/search?tbm=isch&q=" + insert
+    old_stdout = sys.stdout
+    sys.stdout = TextIOWrapper(BytesIO(), sys.stdout.encoding)
+    # url = "http://www.randomkittengenerator.com/cats/rotator.php"
+    # url = "https://www.google.com/search?tbm=isch&q=" + insert
 
-    # response = google_images_download.googleimagesdownload()
-    # arguments = {"keywords": insert, "limit": 1, "print_urls": True}
-    # paths = response.download(arguments)
-    # print(paths)
-    # sys.stdout.seek(0)
-    # output = sys.stdout.read()
+    response = google_images_download.googleimagesdownload()
+    arguments = {"keywords": insert, "limit": 1, "print_urls": True}
+    paths = response.download(arguments)
+    print(paths)
+    sys.stdout.seek(0)
+    output = sys.stdout.read()
 
-    # sys.stdout.close()
-    # sys.stdout = old_stdout
+    sys.stdout.close()
+    sys.stdout = old_stdout
 
-    # for line in output.split("\n"):
-    #     if line.startswith("Image URL:"):
-    #         image_url = line.replace("Image URL: ", "")
+    for line in output.split("\n"):
+        if line.startswith("Image URL:"):
+            image_url = line.replace("Image URL: ", "")
 
     return render_template("kitty.html", response=url, insert=insert)
 
