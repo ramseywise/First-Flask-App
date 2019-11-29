@@ -4,7 +4,8 @@ I developed a built-in API server with Flask custom made for my fearless leader,
 
 ## Features
 
-- Flask and Flask Server Architecture
+- Flask web-interface integration 
+- Python micro-service setup and design
 - API embedding (eg youtube, randomcatgenerator)
 - UI interactive design with image and video embeddedings
 - Virtualenv
