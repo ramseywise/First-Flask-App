@@ -9,5 +9,5 @@ I developed a built-in API server with Flask custom made for my fearless leader,
 - API embedding (eg youtube, randomcatgenerator)
 - UI interactive design with image and video embeddedings
 - Virtualenv
-- Python
-- HTML
+- HTML templates
+- HTML requests
