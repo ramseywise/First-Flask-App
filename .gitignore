@@ -1,20 +1,15 @@
 # Mac Files
 *.DS_Store
-
 .RData
 *.csv
-mcc/
-output/
-partner_data/
-notebooks/
-
-.aws 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-.mypy_cache/*
+*.DS_Store
+.gitignore
+.vscode
 
 # C extensions
 *.so
