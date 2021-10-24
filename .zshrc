@@ -1,13 +1,8 @@
-# install ohmyzsh
-# $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/elizabethwise/.oh-my-zsh"
 
 # Plugins
 plugins=(git zsh-autosuggestions git-open zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
 
 # Set name of the theme to load, see https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -26,19 +21,16 @@ alias dcu='docker-compose down; docker-compose up'
 alias dcub='docker-compose down; docker-compose up --build'
 alias reload="exec $SHELL -l"
 alias dc="docker-compose -f compose/docker-notebook-mac.yml run id_update python master.py"
+alias aws_auth='aws-google-auth -p $aws_profile -d 3600 -u $email -I $google_idp_id -S $google_sp_id --no-cache -a --resolve-aliases'
 
-# for mac-os download docker machine
-curl -L https://github.com/docker/machine/releases/download/v0.16.1/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine
-chmod +x /usr/local/bin/docker-machine
-docker login artifactory.cd-tech26.de
-
-# Docker Functions
+#Functions
 dex(){
   docker exec -ti "$1" bash
 }
 dbash() {
   docker exec -ti $(docker ps -qf "name=$1") bash;
 }
+
 
 # UNIX commands
 mkdir *name* # make new directory
@@ -60,3 +52,6 @@ git add items/item542.json
 git commit -m 'message'
 git push --set-upstream origin #set repo local location
 git rebase origin/master
+# to recover deleted branch
+git reflog
+git branch DSCIENCE-564 9a68576
