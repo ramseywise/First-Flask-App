@@ -39,37 +39,39 @@ Any `.` file will be stored locally, but hidden from the repo. For setting up th
     chsh -s /bin/zsh
 
 ## Homebrew (mac optional)
-Homebrew is an open platform that manages packages for macOS and Linux, see https://brew.sh/
-    - Install and execute cask
-        `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-        `brew install cask`
-    - For permission errors, try
-        `sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local`
-        `sudo chown -R $(whoami) $(brew --prefix)/*`
+#### Homebrew is an open platform that manages packages for macOS and Linux, see https://brew.sh/
+#### Install and execute cask
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install cask
+#### For permission errors, try
+    sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
+    sudo chown -R $(whoami) $(brew --prefix)/*
 
 ## Java 8 SDK (using homebrew)
 This installation is a software development kit for using java applications
-    `brew tap homebrew/cask-versions`
-    `brew install adoptopenjdk8`
+
+#### Install with homebrew
+    brew tap homebrew/cask-versions
+    brew install adoptopenjdk8
 
 ## Python 3
-Download recent stable package of Python (although 3.7 was configured with this setup)
-    `brew install pyenv`
-    `pyenv install 3.7.12`
-    `ls ~/.pyenv/versions/`
-    `pyenv global 3.7.12`
+#### Download recent stable package of Python (although 3.7 was configured with this setup)
+    brew install pyenv
+    pyenv install 3.7.12
+    ls ~/.pyenv/versions/
+    pyenv global 3.7.12
 
-Add if python is store locally
+#### Add if python is store locally but with different path to .zshrc
     if command -v pyenv 1>/dev/null 2>&1; then
         export PATH=$(pyenv root)/shims:$PATH
     fi 
 ## Pip
-Download pip and install
-    - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-    - `python get-pip.py`8
+#### Download pip and install
+    - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    - python get-pip.py
 
 ## Git  
-### Install and configure Git user with email (optional)
+#### Install and configure Git user with email (optional)
     - git --version
     - git config --global user.name "<name>"
     - git config --global user.email "<email>"
