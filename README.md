@@ -38,22 +38,6 @@ Any `.` file will be stored locally, but hidden from the repo. For setting up th
     sudo chmod 775 '.zshrc' 
     chsh -s /bin/zsh
 
-## Homebrew (mac optional)
-#### Homebrew is an open platform that manages packages for macOS and Linux, see https://brew.sh/
-#### Install and execute cask
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install cask
-#### For permission errors, try
-    sudo chown -R $(whoami):admin /usr/local && sudo chmod -R g+rwx /usr/local
-    sudo chown -R $(whoami) $(brew --prefix)/*
-
-## Java 8 SDK (using homebrew)
-This installation is a software development kit for using java applications
-
-#### Install with homebrew
-    brew tap homebrew/cask-versions
-    brew install adoptopenjdk8
-
 ## Python 3
 #### Download recent stable package of Python (although 3.7 was configured with this setup)
     brew install pyenv
@@ -67,70 +51,70 @@ This installation is a software development kit for using java applications
     fi 
 ## Pip
 #### Download pip and install
-    - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-    - python get-pip.py
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python get-pip.py
 
 ## Git  
 #### Install and configure Git user with email (optional)
-    - git --version
-    - git config --global user.name "<name>"
-    - git config --global user.email "<email>"
+    git --version
+    git config --global user.name "<name>"
+    git config --global user.email "<email>"
 
-### Clone Github Repo
-    - Clone github respository to local drive in directory of choice, eg Documents. Use this git command to clone repo 
-        - git clone git@github.com:ramseywise/First-Flask-App.git
-    - Install git and connect to parent/master directory (ie Github repo)
-        ** this allows you to make changes to your local computer and then commit those changes to your master branch
+### Clone github respository 
+#### Store the repo to local drive 
+This connects your local folder to the parent/master directory (ie Github repo) in order to make changes to your local computer and commit changes to master branch. See info on git commands.
+    git clone git@github.com:ramseywise/First-Flask-App.git
 
-#### Configure Git for SSH access (optional for sharing repo)
-##### Add personal access token under /<github_user_profile>/settings/developer settings/ (be sure to save this!)
+### Configure Git for SSH access (optional for sharing repo)
+#### Add personal access token under /<github_user_profile>/settings/developer settings/ (be sure to save this!)
 
-##### Open ssh folder and generate ssh key for private and public file
-    - ssh-keygen -t ed25519
-    - cd ~/.ssh
-    - ls
+#### Open ssh folder and generate ssh key for private and public file
+    ssh-keygen -t ed25519
+    cd ~/.ssh
+    ls
 
-##### Start SSH agent
-    - `eval "$(ssh-agent -s)"`
+#### Start SSH agent
+    eval "$(ssh-agent -s)"
 
-##### Add `~/.ssh/config`  folder with the following contents (keys are optional)
+#### Add `~/.ssh/config`  folder with the following contents (keys are optional)
         Host github.com
         AddKeysToAgent yes
         UseKeychain yes
         IdentityFile ~/.ssh/<private_ssh_key_file>
 
-Add private ssh key file to keychain
-        `ssh-add -K ~/.ssh/id_ed25519`   
+#### Add private ssh key file to keychain
+    ssh-add -K ~/.ssh/id_ed25519
 
-Add public key (id_ed26619) to github under `/<github_user_profile>/settings/SSH and GPG keys/`
+#### Add public key (id_ed26619) to github under `/<github_user_profile>/settings/SSH and GPG keys/`
 
 ## Docker   
 Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud. Simply put, this allows us to build and run code within isolated containers on the cloud, so you can develop features that will later be deployed to the N26 app. 
-    - Install docker
-        `curl -L https://github.com/docker/machine/releases/download/v0.16.1/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine`
-    - Give user permissions
-        `chmod +x /usr/local/bin/docker-machine`
-    - Login using artifactory (optional)
-        `docker login artifactory.cd-tech26.de`
-        `docker pull artifactory.cd-tech26.de/docker/n26/python3.7.2-slim:latest`
+#### Install docker
+    curl -L https://github.com/docker/machine/releases/download/v0.16.1/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine
+#### Give user permissions
+    chmod +x /usr/local/bin/docker-machine
+#### Login using artifactory (optional)
+    docker login artifactory.cd-tech26.de
+    docker pull artifactory.cd-tech26.de/docker/n26/python3.7.2-slim:latest
 
 ## AWS Client (optional)
-Install AWS Client
-    `brew install awscli`
-Create the file ~/.aws/credentials with the following contents
+#### Install AWS Client
+    brew install awscli
+#### Create the file ~/.aws/credentials with the following contents
         [default]
         aws_access_key_id = foo
         aws_secret_access_key = foo
-Create the file ~/.aws/config with the following contents
+#### Create the file ~/.aws/config with the following contents
         [default]
         region = eu-central-1
 
 ## Visual Studio Code (optional)
-- Install Vscode from https://code.visualstudio.com/download
-- Set path to open in terminal with command alias `code`
-- Open VScode command pallet (CMD + Shift + P)
-    - Type `shell` to select `Shell Command: install 'code' command in PATH
-- Add extensions
+#### Install Vscode from `https://code.visualstudio.com/download`
+#### Set path to open in terminal with command alias `code`
+#### Open VScode command pallet (CMD + Shift + P)
+Type `shell` to select `Shell Command: install 'code' command in PATH
+
+#### Add extensions
     - `Atom` keyboard for shortcuts
     - `Python` for debugging
     - `Pylance` for additional python support
