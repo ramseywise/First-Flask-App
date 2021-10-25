@@ -115,15 +115,16 @@ Docker is an open platform for developers and sysadmins to build, ship, and run 
 Type `shell` to select `Shell Command: install 'code' command in PATH
 
 #### Add extensions
-    `Atom` keyboard for shortcuts
-    `Python` for debugging
-    `Pylance` for additional python support
-    `Python Indent` for automatic tabs
-    `Black` for linting format
-    `Prettier` for code formatting
-    `IntelliCode` for auto completion
-    `GitLens` for Git support
-    `Jupyter` for notebook support in VScode
-    `Docker` for maintaining applications extensions 
-    `Beautify` for javascript, JSON, CSS, HTML
-    - for more web development extensions, see https://codeforgeek.com/best-visual-studio-code-extensions-web-development/ 
+`Atom` keyboard for shortcuts
+`Python` for debugging
+`Pylance` for additional python support
+`Python Indent` for automatic tabs
+`Black` for linting format
+`Prettier` for code formatting
+`IntelliCode` for auto completion
+`GitLens` for Git support
+`Jupyter` for notebook support in VScode
+`Docker` for maintaining applications extensions 
+`Beautify` for javascript, JSON, CSS, HTML
+
+For more web development extensions, see https://codeforgeek.combest-visual-studio-code-extensions-web-development/ 
