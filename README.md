@@ -109,7 +109,7 @@ Docker is an open platform for developers and sysadmins to build, ship, and run 
         region = eu-central-1
 
 ## Visual Studio Code (optional)
-#### Install Vscode from `https://code.visualstudio.com/download`
+#### Install Vscode 
 #### Set path to open in terminal with command alias `code`
 #### Open VScode command pallet (CMD + Shift + P)
 Type `shell` to select `Shell Command: install 'code' command in PATH
