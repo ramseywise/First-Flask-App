@@ -61,12 +61,11 @@ Any `.` file will be stored locally, but hidden from the repo. For setting up th
     git config --global user.email "<email>"
 
 ### Clone github respository 
-#### Store the repo to local drive 
-This connects your local folder to the parent/master directory (ie Github repo) in order to make changes to your local computer and commit changes to master branch. See info on git commands.
+#### Store the repo to local drive to align with parent Github directory
     git clone git@github.com:ramseywise/First-Flask-App.git
 
 ### Configure Git for SSH access (optional for sharing repo)
-#### Add personal access token under /<github_user_profile>/settings/developer settings/ (be sure to save this!)
+Add personal access token under `/<github_user_profile>/settings/developer settings/` (be sure to save this!)
 
 #### Open ssh folder and generate ssh key for private and public file
     ssh-keygen -t ed25519
@@ -85,7 +84,8 @@ This connects your local folder to the parent/master directory (ie Github repo) 
 #### Add private ssh key file to keychain
     ssh-add -K ~/.ssh/id_ed25519
 
-#### Add public key (id_ed26619) to github under `/<github_user_profile>/settings/SSH and GPG keys/`
+#### Add public key (id_ed26619) to github 
+Navigate to `/<github_user_profile>/settings/SSH and GPG keys/`
 
 ## Docker   
 Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud. Simply put, this allows us to build and run code within isolated containers on the cloud, so you can develop features that will later be deployed to the N26 app. 
