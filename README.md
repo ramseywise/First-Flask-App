@@ -69,13 +69,13 @@ Download pip and install
 
 ## Git  
 #### Install and configure Git user with email
-    - `git --version`
-    - `git config --global user.name "<elizabethwise>"`
-    - `git config --global user.email "<n26email>"`
+    - git --version
+    - git config --global user.name "<elizabethwise>"
+    - git config --global user.email "<n26email>"
 
 #### Clone Github Repo
     - Clone github respository to local drive in directory of choice, eg Documents. Use this git command to clone repo 
-        - `git clone git@github.com:ramseywise/First-Flask-App.git`
+        git clone git@github.com:ramseywise/First-Flask-App.git
     - Install git and connect to parent/master directory (ie Github repo)
         ** this allows you to make changes to your local computer and then commit those changes to your master branch
 
