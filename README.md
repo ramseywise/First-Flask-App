@@ -18,21 +18,23 @@ ConEmu is a console emulated for running shell scripts in terminal. Install inst
 
 ### oh-my-zsh 
 Oh-my-zsh is an open source framework for programming functions, helpers, plugins, themes in terminal instead of Unix/Bash commands to execute a shell script.
-1. In terminal, run the following command lines seperately:
-    ** this command `sh-c` installs oh-my-zsh from github repo 
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-        exec $SHELL -l
-            git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/pluginszsh-syntax-highlighting
-        git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-        git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
-        git clone https://github.com/powerline/fonts.git --depth=1
-        cd fonts
-        ./install.sh
-        cd ..
-        rm -rf fonts    
-2. set up .zshrc file with plugins and alias that can be usd in terminal command line
-        ** any `.` file will be stored locally, but hidden from the repo. For setting up this file, see the examplescript I saved here for you here.    
-3. give your user permissions and set default shell to zsh
+
+#### In terminal, run the following command lines seperately. `sh-c` installs oh-my-zsh from github repo
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    exec $SHELL -l
+            git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOMpluginszsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.sh
+    cd ..
+    rm -rf fonts    
+
+#### Set up .zshrc file with plugins and alias that can be usd in terminal command line
+Any `.` file will be stored locally, but hidden from the repo. For setting up this file, see the example script I saved here for you here.    
+
+#### Give your user permissions and set default shell to zsh
     sudo chmod 775 '.zshrc' 
     chsh -s /bin/zsh
 
@@ -67,12 +69,12 @@ Download pip and install
     - `python get-pip.py`8
 
 ## Git  
-#### Install and configure Git user with email (optional)
+### Install and configure Git user with email (optional)
     - git --version
     - git config --global user.name "<name>"
     - git config --global user.email "<email>"
 
-#### Clone Github Repo
+### Clone Github Repo
     - Clone github respository to local drive in directory of choice, eg Documents. Use this git command to clone repo 
         - git clone git@github.com:ramseywise/First-Flask-App.git
     - Install git and connect to parent/master directory (ie Github repo)
