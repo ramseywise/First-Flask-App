@@ -11,7 +11,6 @@ This is a simple Flask-based, custom-designed app with a built-in API server des
 - HTML templates and requests
 - Virtualenv
 
-**########################################################################**
 # Setup
 
 ## Install ConEmu (optional for windows)
@@ -64,49 +63,43 @@ Add if python is store locally
         export PATH=$(pyenv root)/shims:$PATH
     fi 
 ## Pip
-- download pip and install
-    `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-    `python get-pip.py`8
+Download pip and install
+    - `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+    - `python get-pip.py`8
 
 ## Git  
-Check that you have Git installed
-    `git --version`
-Configure Git user with email
-    `git config --global user.name "<elizabethwise>"`
-    `git config --global user.email "<n26email>"`
-Configure Git for SSH access:
-    - Open ssh folder and generate file with .pub extension 
-        `cd ~/.ssh`
-        `ssh-keygen -f ~/.ssh/<employee_first_name>_ed25519 -C <employee_first_name>@N26 -o -a 200 -t ed25519`
-    - Authorize sign-on via SSH access in github setting
-    - Create and save config file with the following:
-            Host github.com
-            IdentityFile ~/.ssh/<private_ssh_key_file>
-Clone Github Repo
+#### Install and configure Git user with email
+    - `git --version`
+    - `git config --global user.name "<elizabethwise>"`
+    - `git config --global user.email "<n26email>"`
+
+#### Clone Github Repo
     - Clone github respository to local drive in directory of choice, eg Documents. Use this git command to clone repo 
-        `git clone git@github.com:ramseywise/First-Flask-App.git`
+        - `git clone git@github.com:ramseywise/First-Flask-App.git`
     - Install git and connect to parent/master directory (ie Github repo)
         ** this allows you to make changes to your local computer and then commit those changes to your master branch
-For private repos, use SSH key
-    - Add personal access token under `/<github_user_profile>/settings/developer settings/` (be sure to save this!)
-    - Configure git with SSH
-        `git config --global user.name  “<elizabeth.wise>“`
-        `git config --global user.email  “<@n26.com>”`
-    - Generate SSH key (press enter for no passphrase)
-        `ssh-keygen -t ed25519`
-    - Open `/.ssh` folder to see if both private and public key are there
-        `cd ~/.ssh`
-        `ls`
-    - Start SSH agent (optional)
-        `eval "$(ssh-agent -s)"`
-    - Add public key (id_ed26619) to github under `/<github_user_profile>/settings/SSH and GPG keys/`
-    - Add `~/.ssh/config`  folder with the following contents (keys are optional)
+
+#### Configure Git for SSH access (optional for sharing repo)
+Add personal access token under `/<github_user_profile>/settings/developer settings/` (be sure to save this!)
+
+Open ssh folder and generate ssh key for private and public file
+    - `ssh-keygen -t ed25519`
+    - `cd ~/.ssh`
+    - `ls`
+
+Start SSH agent
+    - `eval "$(ssh-agent -s)"`
+
+Add `~/.ssh/config`  folder with the following contents (keys are optional)
         Host github.com
         AddKeysToAgent yes
         UseKeychain yes
         IdentityFile ~/.ssh/<private_ssh_key_file>
-     - Add private ssh key file to keychain and 
+
+Add private ssh key file to keychain
         `ssh-add -K ~/.ssh/id_ed25519`   
+
+Add public key (id_ed26619) to github under `/<github_user_profile>/settings/SSH and GPG keys/`
 
 ## Docker   
 Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud. Simply put, this allows us to build and run code within isolated containers on the cloud, so you can develop features that will later be deployed to the N26 app. 
