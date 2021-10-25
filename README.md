@@ -13,13 +13,12 @@ This is a simple Flask-based, custom-designed app with a built-in API server des
 
 # Setup
 
-## Install ConEmu (optional for windows)
-ConEmu is a console emulated for running shell scripts in terminal
-    - Install instructions here: https://conemu.github.io/
+### ConEmu (optional for windows)
+ConEmu is a console emulated for running shell scripts in terminal. Install instructions here: https://conemu.github.io/
 
-## oh-my-zsh 
-Oh-my-zsh is an open source framework for programming functions, helpers, plugins, themes in terminal instead of Unix/Bash commands to execute a shell script
-    - In terminal, run the following command lines seperately:
+### oh-my-zsh 
+Oh-my-zsh is an open source framework for programming functions, helpers, plugins, themes in terminal instead of Unix/Bash commands to execute a shell script.
+    1. In terminal, run the following command lines seperately:
         ** this command `sh-c` installs oh-my-zsh from github repo 
             sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
             exec $SHELL -l
@@ -31,9 +30,11 @@ Oh-my-zsh is an open source framework for programming functions, helpers, plugin
             ./install.sh
             cd ..
             rm -rf fonts
-    - set up .zshrc file with plugins and alias that can be usd in terminal command line
+    
+    2. set up .zshrc file with plugins and alias that can be usd in terminal command line
         ** any `.` file will be stored locally, but hidden from the repo. For setting up this file, see the example script I saved here for you here.
-    - give your user permissions and set default shell to zsh
+    
+    3. give your user permissions and set default shell to zsh
         sudo chmod 775 '.zshrc' 
         chsh -s /bin/zsh
 
@@ -64,33 +65,33 @@ Add if python is store locally
     fi 
 ## Pip
 Download pip and install
-    - `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+    - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
     - `python get-pip.py`8
 
 ## Git  
-#### Install and configure Git user with email
+#### Install and configure Git user with email (optional)
     - git --version
-    - git config --global user.name "<elizabethwise>"
-    - git config --global user.email "<n26email>"
+    - git config --global user.name "<name>"
+    - git config --global user.email "<email>"
 
 #### Clone Github Repo
     - Clone github respository to local drive in directory of choice, eg Documents. Use this git command to clone repo 
-        git clone git@github.com:ramseywise/First-Flask-App.git
+        - git clone git@github.com:ramseywise/First-Flask-App.git
     - Install git and connect to parent/master directory (ie Github repo)
         ** this allows you to make changes to your local computer and then commit those changes to your master branch
 
 #### Configure Git for SSH access (optional for sharing repo)
-Add personal access token under `/<github_user_profile>/settings/developer settings/` (be sure to save this!)
+##### Add personal access token under /<github_user_profile>/settings/developer settings/ (be sure to save this!)
 
-Open ssh folder and generate ssh key for private and public file
-    - `ssh-keygen -t ed25519`
-    - `cd ~/.ssh`
-    - `ls`
+##### Open ssh folder and generate ssh key for private and public file
+    - ssh-keygen -t ed25519
+    - cd ~/.ssh
+    - ls
 
-Start SSH agent
+##### Start SSH agent
     - `eval "$(ssh-agent -s)"`
 
-Add `~/.ssh/config`  folder with the following contents (keys are optional)
+##### Add `~/.ssh/config`  folder with the following contents (keys are optional)
         Host github.com
         AddKeysToAgent yes
         UseKeychain yes
